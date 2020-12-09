@@ -55,15 +55,14 @@ def main():
                             mode='lines',
                             line_color = 'light blue',
                             name='Number of Open Tables'))
+        fig.update_layout(title_text = 'Open Tables', xaxis_rangeslider_visible = True)
+
         st.plotly_chart(fig, use_container_width=True)
 
-        st.write('Open Table Count with Mean Statistics')
+        st.write('Drop and Actual Wins')
 
         fig = go.Figure()
-        fig.add_trace(go.Scatter(x=df_tables.date, y=df_tables['table count'],
-                            mode='lines',
-                            line_color = 'light blue',
-                            name='Number of Open Tables'))
+
         fig.add_trace(go.Scatter(x=df_tables.date, y=df_tables['actual win mean'],
                             mode='lines',
                             line_color = 'teal',
@@ -72,14 +71,18 @@ def main():
                             mode='lines',
                             line_color = 'blue',
                             name='Mean Drop'))
-        fig.add_trace(go.Scatter(x=df_tables.date, y=df_tables['win/min mean'],
-                            mode='lines',
-                            line_color = 'red',
-                            name='Mean actual win/ minutes played'))
-        fig.update_layout(title_text = 'Number of Open Tables', xaxis_rangeslider_visible = True)
+        fig.update_layout(title_text = 'Actual Wins and Drop', xaxis_rangeslider_visible = True)
         st.plotly_chart(fig, use_container_width=True)
 
+        fig = px.box(df1, x="d_game_date", y="Drop",  title = 'Box Whiskers Drop')
+        fig.update_traces(quartilemethod="exclusive") # or "inclusive", or "linear" by default
+        fig.update_layout(title_text = 'Drop amount', xaxis_rangeslider_visible = True)
+        st.plotly_chart(fig, use_container_width=True)
 
+        fig = px.box(df1, x="d_game_date", y="f_actual_win",  title = 'Box Whiskers actual win')
+        fig.update_traces(quartilemethod="exclusive") # or "inclusive", or "linear" by default
+        fig.update_layout(title_text = 'Actual Win', xaxis_rangeslider_visible = True)
+        st.plotly_chart(fig, use_container_width=True)
 #Question2
     if option == 'Slot Machines Question 2':
         st.title('Slot Machine Reallocation')
