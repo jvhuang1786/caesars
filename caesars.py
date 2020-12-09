@@ -91,8 +91,9 @@ def main():
  '5141618','B160874785','B160874786','B160874788','B160874789','B170506131','B170506132',
  'B170506133','B170506134','MRXU005523','MRXU005524','MRXU005525','MRXU005526','MRXU005527','MRXU005528'))
         st.write('You selected:', option)
-
-        st.write(df_post[df_post['c_serial_num']==option])
+        df_comb = pd.concat([df_post[df_post['c_serial_num']==option],
+        df_pre[df_pre['c_serial_num']==option]))
+        st.write(df_comb.T)
         # print(df_pre[option].agg('mtr_win over dof').mean())
         #
         # print()
