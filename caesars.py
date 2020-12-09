@@ -30,7 +30,7 @@ def main():
         df_tables = pd.read_json('df_tables.json')
         #####
         start_date = st.sidebar.date_input('Start date', df_tables['d_game_date'][0])
-        end_date = st.sidebar.date_input('End date', df_tables['df_game_date'][51])
+        end_date = st.sidebar.date_input('End date', df_tables['d_game_date'][51])
 
         if start_date < end_date:
             st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
