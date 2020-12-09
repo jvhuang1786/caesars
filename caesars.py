@@ -34,21 +34,19 @@ def main():
         start_date = st.sidebar.date_input('Start date', datetime.strptime('2020-10-01', '%Y-%m-%d'))
         end_date = st.sidebar.date_input('End date', datetime.strptime('2020-11-21', '%Y-%m-%d'))
 
-        if start_date < datetime.strptime('2020-10-01', '%Y-%m-%d'):
-            st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
-        else:
-            st.error('Error: End date must fall after start date.')
-        if end_date > datetime.strptime('2020-11-21', '%Y-%m-%d'):
+        if start_date < end_date:
             st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
         else:
             st.error('Error: End date must fall after start date.')
 
         st.write('The number of unique tables on property ABC is: ', len(df1.c_table_num.unique()))
 
-        #Plotly table count
+
 
         st.write('This is the table number and their counts through the given dates.', table_count)
 
+        mask = (df_tables['d_game_date'] >= start_date) & (df_tables['d_game_date'] <= end_date)
+        st.write(df_tables.loc[mask])
 
         st.write('blah blah blah')
 
