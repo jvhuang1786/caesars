@@ -34,7 +34,11 @@ def main():
         start_date = st.sidebar.date_input('Start date', datetime.strptime('2020-10-01', '%Y-%m-%d'))
         end_date = st.sidebar.date_input('End date', datetime.strptime('2020-11-21', '%Y-%m-%d'))
 
-        if start_date < end_date:
+        if start_date < datetime.strptime('2020-10-01', '%Y-%m-%d'):
+            st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
+        else:
+            st.error('Error: End date must fall after start date.')
+        if end_date > datetime.strptime('2020-11-21', '%Y-%m-%d'):
             st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
         else:
             st.error('Error: End date must fall after start date.')
