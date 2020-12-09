@@ -29,12 +29,13 @@ def main():
         ##dataframes##
         df1 = pd.read_json('df1.json')
         table_count = pd.read_json('table_count.json')
-        df_tables = df1.groupby('d_game_date').agg({'c_table_num': ['count'],'f_actual_win': ['sum', 'min', 'max', 'mean', 'median', 'std'],
-                                'Drop': ['sum', 'min', 'max', 'mean', 'median', 'std'],
-                                         'actul win over minutes played': ['sum', 'min', 'max', 'mean', 'median', 'std']})
-
-        df_tables = df_tables.reset_index()
-        df_tables['d_game_date'] = df_tables['d_game_date'].apply(lambda x: x.strftime('%Y-%m-%d'))
+        df_tables = pd.read_json('df_tables.json')
+        # df_tables = df1.groupby('d_game_date').agg({'c_table_num': ['count'],'f_actual_win': ['sum', 'min', 'max', 'mean', 'median', 'std'],
+        #                         'Drop': ['sum', 'min', 'max', 'mean', 'median', 'std'],
+        #                                  'actul win over minutes played': ['sum', 'min', 'max', 'mean', 'median', 'std']})
+        #
+        # df_tables = df_tables.reset_index()
+        # df_tables['d_game_date'] = df_tables['d_game_date'].apply(lambda x: x.strftime('%Y-%m-%d'))
         #df_tables.d_game_date = df_tables.d_game_date.astype('str').apply(lambda x: datetime.strptime(x, 'YYYY-MM-DD'))
         #####
         start_date = st.sidebar.date_input('Start date', datetime.strptime('2020-10-01', '%Y-%m-%d'))
