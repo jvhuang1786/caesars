@@ -31,8 +31,8 @@ def main():
         table_count = pd.read_json('table_count.json')
         df_tables = pd.read_json('df_tables.json')
         #####
-        start_date = st.sidebar.date_input('Start date', datetime.strptime('2020-10-01'))
-        end_date = st.sidebar.date_input('End date', datetime.strptime('2020-11-21'))
+        start_date = st.sidebar.date_input('Start date', datetime.strptime('2020-10-01', '%Y-%m-%d'))
+        end_date = st.sidebar.date_input('End date', datetime.strptime('2020-11-21', '%Y-%m-%d'))
 
         if start_date < end_date:
             st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
