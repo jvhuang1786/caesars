@@ -89,13 +89,13 @@ def main():
 
         fig = go.Figure()
         fig.add_trace(go.Bar(
-            x=df['c_serial_num'],
+            x=df_pre_inplace['c_serial_num'],
             y=df_pre_inplace[['mtr_win over dof']],
             name='Pre Move',
             marker_color='silver'
         ))
         fig.add_trace(go.Bar(
-            x=['c_serial_num'],
+            x=df_post_inplace['c_serial_num'],
             y=df_post_inplace[['mtr_win over dof']],
             name='Post Move',
             marker_color='gold'
