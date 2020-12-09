@@ -27,7 +27,7 @@ def main():
         ##dataframes##
         df1 = pd.read_json('df1.json')
         table_count = pd.read_json('table_count.json')
-        st.write('The number of unique tables on property ABC is 140', len(df1.c_table_num.unique())
+        st.write('The number of unique tables on property ABC is 140', len(df1.c_table_num.unique()))
 
         #Plotly table count
 
