@@ -46,7 +46,7 @@ def main():
 
         st.write('This is the table number and their counts through the given dates.', table_count)
         #mask = (df_tables['date'] <= start_date) & (df_tables['date'] >= end_date)
-        st.write(df_tables)
+        st.write('Table count for date and Summary Statistics of Actual Win, Drop and Actual divided by Minutes Played',df_tables)
 
 
 
