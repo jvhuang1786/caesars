@@ -7,7 +7,7 @@ import plotly.express as px
 from PIL import Image
 from datetime import datetime
 
-st.set_page_config(layout="wide")
+
 
 image = Image.open('images/logo.png')
 st.image(image, width = 800)
