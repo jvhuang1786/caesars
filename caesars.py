@@ -22,7 +22,7 @@ def main():
 
 
 #Question1
-    if option == 'How Many Tables Question 1'
+    if option == 'How Many Tables Question 1':
         caesars_temp = """
         <div style="background-color:#E31C3C;padding:1px">
         <h3 style="color:#313F3D;text-align:center;">How Many Tables</h3>
