@@ -95,6 +95,24 @@ def main():
         st.write(df_comb.T)
         fig = go.Figure()
         fig.add_trace(go.Bar(
+            x=['coin_in', 'mtr_win'],
+            y=df_comb[['coin_in', 'mtr_win']].iloc[0],
+            name='Post Move',
+            marker_color='blue'
+        ))
+        fig.add_trace(go.Bar(
+            x=['coin_in', 'mtr_win'],
+            y=df_comb[['coin_in', 'mtr_win']].iloc[1],
+            name='Pre Move',
+            marker_color='lightblue'
+        ))
+
+        # Here we modify the tickangle of the xaxis, resulting in rotated labels.
+        fig.update_layout(title_text = 'coin_in and mtr_win in over dof',barmode='group', xaxis_tickangle=-45)
+        st.plotly_chart(fig, use_container_width=True)
+
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
             x=['mtr_win over dof', 'coin_in over dof'],
             y=df_comb[['mtr_win over dof', 'coin_in over dof']].iloc[0],
             name='Post Move',
@@ -109,6 +127,24 @@ def main():
 
         # Here we modify the tickangle of the xaxis, resulting in rotated labels.
         fig.update_layout(title_text = 'mtr win and coin in over dof',barmode='group', xaxis_tickangle=-45)
+        st.plotly_chart(fig, use_container_width=True)
+
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
+            x=['mtr_win over hp', 'coin_in over hp'],
+            y=df_comb[['mtr_win over hp', 'coin_in over hp']].iloc[0],
+            name='Post Move',
+            marker_color='blue'
+        ))
+        fig.add_trace(go.Bar(
+            x=['mtr_win over hp', 'coin_in over hp'],
+            y=df_comb[['mtr_win over hp', 'coin_in over hp']].iloc[1],
+            name='Pre Move',
+            marker_color='lightblue'
+        ))
+
+        # Here we modify the tickangle of the xaxis, resulting in rotated labels.
+        fig.update_layout(title_text = 'coin_in and mtr_win in over hp/pulls',barmode='group', xaxis_tickangle=-45)
         st.plotly_chart(fig, use_container_width=True)
 
 if __name__ == '__main__':
