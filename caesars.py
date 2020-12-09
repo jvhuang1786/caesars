@@ -91,14 +91,14 @@ def main():
  '5141618','B160874785','B160874786','B160874788','B160874789','B170506131','B170506132',
  'B170506133','B170506134','MRXU005523','MRXU005524','MRXU005525','MRXU005526','MRXU005527','MRXU005528'))
         st.write('You selected:', option)
-        df_comb = pd.concat([df_post[df_post['c_serial_num']==option],df_pre[df_pre['c_serial_num']==option]]).reset_index()
+        df_comb = pd.concat([df_post[df_post['c_serial_num']==option],df_pre[df_pre['c_serial_num']==option]]).reset_index(drop= True)
         st.write(df_comb.T)
         fig = go.Figure()
         fig.add_trace(go.Bar(
             x=['mtr_win over dof', 'coin_in over dof',
        'mtr_win over hp', 'coin_in over hp'],
             y=df_comb[['mtr_win over dof', 'coin_in over dof',
-       'mtr_win over hp', 'coin_in over hp']][0],
+       'mtr_win over hp', 'coin_in over hp']].iloc[0],
             name='Primary Product',
             marker_color='indianred'))
         # ))
@@ -111,6 +111,7 @@ def main():
 
         # Here we modify the tickangle of the xaxis, resulting in rotated labels.
         fig.update_layout(barmode='group', xaxis_tickangle=-45)
+        st.plotly_chart(fig, use_container_width=True)
 
 if __name__ == '__main__':
     main()
