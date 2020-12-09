@@ -72,7 +72,7 @@ def main():
         fig.update_layout(title_text = 'Actual Win Box and Whiskers', xaxis_rangeslider_visible = True)
         st.plotly_chart(fig, use_container_width=True)
 
-        st.write('What was interesting is there was decrease in table amount just on November 21st. Usuaully there are around 100 tables on the weekends and 70ish tables on the weekdays.  However, this number has been decreasing. But the amount of money actually increased on the last day.')
+        st.write('What was interesting is there was decrease in table amount just on November 21st. Usuaully there are around 100 tables on the weekends and 60ish tables on the weekdays.  However, this number has been decreasing. But the amount of money actually increased on the last day.')
 
 #Question2
     if option == 'Slot Machines Question 2':
@@ -91,6 +91,25 @@ def main():
  '5141618','B160874785','B160874786','B160874788','B160874789','B170506131','B170506132',
  'B170506133','B170506134','MRXU005523','MRXU005524','MRXU005525','MRXU005526','MRXU005527','MRXU005528'))
         st.write('You selected:', option)
+
+        print(df_post[option].agg('mtr_win over dof').mean())
+        print(df_pre[option].agg('mtr_win over dof').mean())
+
+        print()
+        print()
+
+        print(df_post[option].agg('coin_in over dof').mean())
+        print(df_pre[option].agg('coin_in over dof').mean())
+
+        print()
+        print()
+
+        print(df_post[option].agg('mtr_win over hp').mean())
+        print(df_pre[option].agg('mtr_win over hp').mean())
+        print()
+        print()
+        print(df_post[option].agg('coin_in over hp').mean())
+        print(df_pre[option].agg('coin_in over hp').mean())
 
 if __name__ == '__main__':
     main()
