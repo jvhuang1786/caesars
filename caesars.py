@@ -92,7 +92,7 @@ def main():
  'B170506133','B170506134','MRXU005523','MRXU005524','MRXU005525','MRXU005526','MRXU005527','MRXU005528'))
         st.write('You selected:', option)
 
-        print(df_post[df_post['c_serial_num']==option])
+        st.write(print(df_post[df_post['c_serial_num']==option]))
         # print(df_pre[option].agg('mtr_win over dof').mean())
         #
         # print()
