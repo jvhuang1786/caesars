@@ -31,7 +31,7 @@ def main():
         df1 = pd.read_csv('df1.csv')
         table_count = pd.read_json('table_count.json')
         df_tables = pd.read_csv('df_tables.csv',index_col =0)
-
+        #####
         st.write('The number of unique tables on property ABC is: ', len(df1.c_table_num.unique()))
 
 
@@ -78,7 +78,12 @@ def main():
     if option == 'Slot Machines Question 2':
         st.title('Slot Machine Reallocation')
         #####dataframes
+        df_pre = pd.read_csv('df_pre.csv',index_col = 0)
+        df_post = pd.read_csv('df_post.csv',index_col = 0)
         #####
+        st.write('There were a total of 34 slot machines starting in zone 2. 32 slot machines were then moved from other zones to zone 2.')
+        st.write('This is the pre_move table for the 32 slot machines and zone 2', df_pre)
+        st.write('This is the post_move table for the 32 slot machines that moved into zone 2', df_post)
         option = st.selectbox(
         'Which of the 32 slot Machines do you want to compare?',
         ('2384807','2384808','2384809','2384810','2492692','2492693','2492696','2492697',
