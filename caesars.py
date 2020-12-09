@@ -80,8 +80,8 @@ def main():
         #####dataframes
         df_pre = pd.read_csv('df_pre.csv',index_col = 0)
         df_post = pd.read_csv('df_post.csv',index_col = 0)
-        df2_post_inplace = pd.read_csv('df_inplace_post.csv',index_col =0)
-        df2_pre_inplace = pd.read_csv('df_inplace_pre.csv',index_col=0)
+        df_post_inplace = pd.read_csv('df_inplace_post.csv',index_col =0)
+        df_pre_inplace = pd.read_csv('df_inplace_pre.csv',index_col=0)
         #####
         st.write('There were a total of 34 slot machines starting in zone 2. 32 slot machines were then moved from other zones to zone 2. Slot machines that moved are indicated by "moving" and those that stayed in place are indicated by "inplace" under the slot logistics column.')
         st.write('This is the pre_move table for the 32 slot machines and zone 2', df_pre)
@@ -95,7 +95,7 @@ def main():
        '2174341', '2174128', '2174372', '1965309', '2174393', '1948962',
        '2174358', '2174167', '2174120', '2174126', '2174124', '2174130',
        '2174353', '2174332', '2174387', '2174129'],
-            y=df_comb[['mtr_win over dof', 'coin_in over dof']],
+            y=df_pre_inplace[['mtr_win over dof', 'coin_in over dof']],
             name='Pre Move',
             marker_color='silver'
         ))
@@ -106,7 +106,7 @@ def main():
        '2174341', '2174128', '2174372', '1965309', '2174393', '1948962',
        '2174358', '2174167', '2174120', '2174126', '2174124', '2174130',
        '2174353', '2174332', '2174387', '2174129'],
-            y=df_comb[['mtr_win over dof', 'coin_in over dof']],
+            y=df_post_inplace[['mtr_win over dof', 'coin_in over dof']],
             name='Post Move',
             marker_color='gold'
         ))
