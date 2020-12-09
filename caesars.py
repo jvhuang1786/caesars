@@ -30,7 +30,7 @@ def main():
         df1 = pd.read_json('df1.json')
         table_count = pd.read_json('table_count.json')
         df_tables = pd.read_csv('df_tables.csv',index_col =0)
-        df_tables.date = df_tables.date.apply(lambda x: datetime.strptime(x, '%Y-%m-%d'))
+        #df_tables.date = df_tables.date.apply(lambda x: datetime.strptime(x, '%Y-%m-%d'))
         #####
         # start_date = st.sidebar.date_input('Start date', datetime.strptime('2020-09-30', '%Y-%m-%d'))
         # end_date = st.sidebar.date_input('End date', datetime.strptime('2020-11-22', '%Y-%m-%d'))
