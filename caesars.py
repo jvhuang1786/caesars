@@ -23,25 +23,13 @@ def main():
 
 #Question1
     if option == 'How Many Tables Question 1':
-        st.write('This section goes over number of open tables through a time period.')
-        caesars_temp = """
-        <div style="background-color:#E31C3C;padding:1px">
-        <h3 style="color:#313F3D;text-align:center;">How Many Tables</h3>
-        </div>
-        """
-        st.markdown(caesars_temp,unsafe_allow_html=True)
+        st.write('How many Open Tables')
 
         st.write('blah blah blah')
 
 #Question2
     if option == 'Slot Machines Question 2':
-        st.write('This section goes over slot machine reallocation.')
-        caesars_temp = """
-        <div style="background-color:#E31C3C;padding:1px">
-        <h3 style="color:#313F3D;text-align:center;">Slot Machine Reallocation</h3>
-        </div>
-        """
-        st.markdown(caesars_temp,unsafe_allow_html=True)
+        st.title('Slot Machine Reallocation')
 
         st.write('blah blah blah')
 
