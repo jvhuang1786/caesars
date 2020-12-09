@@ -5,6 +5,8 @@ import numpy as np
 import plotly.graph_objects as go
 import plotly.express as px
 from PIL import Image
+from datetime import datetime
+
 
 image = Image.open('images/logo.png')
 st.image(image, width = 800)
@@ -29,8 +31,8 @@ def main():
         table_count = pd.read_json('table_count.json')
         df_tables = pd.read_json('df_tables.json')
         #####
-        start_date = st.sidebar.date_input('Start date', '2020-10-01')
-        end_date = st.sidebar.date_input('End date', '2020-11-21')
+        start_date = st.sidebar.date_input('Start date', datetime.strptime('2020-10-01'))
+        end_date = st.sidebar.date_input('End date', datetime.strptime('2020-11-21'))
 
         if start_date < end_date:
             st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
