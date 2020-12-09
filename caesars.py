@@ -14,7 +14,7 @@ st.image(image, width = 800)
 
 caesars_titletemp = """
 <div style="background-color:#E31C3C;padding:1px">
-<h3 style="color:#313F3D;text-align:center;">Caesars Entertainment Dashboard</h3>
+<h3 style="color:#313F3D;text-align:center;">Caesar's Entertainment Dashboard</h3>
 </div>
 """
 st.markdown(caesars_titletemp,unsafe_allow_html=True)
