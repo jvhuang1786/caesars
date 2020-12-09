@@ -224,6 +224,7 @@ def main():
         # Here we modify the tickangle of the xaxis, resulting in rotated labels.
         fig.update_layout(title_text = 'coin_in and mtr_win in over hp/pulls',barmode='group', xaxis_tickangle=-45)
         st.plotly_chart(fig, use_container_width=True)
+        st.write('Since you are comparing 27 days to 76 days you would have to divide the total amount to make an equal comparison. Overall the machines performed better. This could be due to the machines from other areas being more popular which attracted more people to zone 2 to play the pre-zone 2 machines more as well.')
 
 if __name__ == '__main__':
     main()
