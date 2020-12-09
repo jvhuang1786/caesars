@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import yfinance as yf
 
+image = Image.open('images/logo.png')
+st.image(image, width = 800)
+
 st.title('Caesars App')
 
 st.markdown("""
