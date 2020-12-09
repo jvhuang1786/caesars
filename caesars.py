@@ -45,7 +45,7 @@ def main():
 
 
         st.write('This is the table number and their counts through the given dates.', table_count)
-        mask = (df_tables['date'] == start_date) & (df_tables['date'] == end_date)
+        mask = (df_tables['date'] <= start_date) & (df_tables['date'] >= end_date)
         st.write(df_tables.loc[mask])
 
 
