@@ -111,7 +111,7 @@ def main():
         fig = go.Figure()
         fig.add_trace(go.Bar(
             x=['Pre'],
-            y=pd.Series(round(df_post_move.agg('mtr_win over dof').mean(),3)),
+            y=pd.Series(round(df_pre_move.agg('mtr_win over dof').mean(),3)),
             name='Pre Move',
             marker_color='blue'
         ))
