@@ -134,13 +134,13 @@ def main():
             x=['mtr_win over hp', 'coin_in over hp'],
             y=df_comb[['mtr_win over hp', 'coin_in over hp']].iloc[0],
             name='Post Move',
-            marker_color='blue'
+            marker_color='green'
         ))
         fig.add_trace(go.Bar(
             x=['mtr_win over hp', 'coin_in over hp'],
             y=df_comb[['mtr_win over hp', 'coin_in over hp']].iloc[1],
             name='Pre Move',
-            marker_color='lightblue'
+            marker_color='lightgreen'
         ))
 
         # Here we modify the tickangle of the xaxis, resulting in rotated labels.
