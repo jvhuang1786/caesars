@@ -95,7 +95,8 @@ def main():
         st.write(df_comb.T)
         fig = go.Figure()
         fig.add_trace(go.Bar(
-            x=,
+            x=['mtr_win over dof', 'coin_in over dof',
+       'mtr_win over hp', 'coin_in over hp'],
             y=df_comb[['mtr_win over dof', 'coin_in over dof',
        'mtr_win over hp', 'coin_in over hp']][0],
             name='Primary Product',
