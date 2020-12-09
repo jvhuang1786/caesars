@@ -99,15 +99,17 @@ def main():
        'mtr_win over hp', 'coin_in over hp'],
             y=df_comb[['mtr_win over dof', 'coin_in over dof',
        'mtr_win over hp', 'coin_in over hp']].iloc[0],
-            name='Primary Product',
-            marker_color='indianred'))
-        # ))
-        # fig.add_trace(go.Bar(
-        #     x=months,
-        #     y=[19, 14, 22, 14, 16, 19, 15, 14, 10, 12, 12, 16],
-        #     name='Secondary Product',
-        #     marker_color='lightsalmon'
-        # ))
+            name='Post Move',
+            marker_color='indianred'
+        ))
+        fig.add_trace(go.Bar(
+            x=['mtr_win over dof', 'coin_in over dof',
+       'mtr_win over hp', 'coin_in over hp'],
+            y=df_comb[['mtr_win over dof', 'coin_in over dof',
+       'mtr_win over hp', 'coin_in over hp']].iloc[0],
+            name='Pre Move',
+            marker_color='lightsalmon'
+        ))
 
         # Here we modify the tickangle of the xaxis, resulting in rotated labels.
         fig.update_layout(barmode='group', xaxis_tickangle=-45)
