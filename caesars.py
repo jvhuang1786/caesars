@@ -39,6 +39,9 @@ def main():
         st.markdown(caesars_temp,unsafe_allow_html=True)
 
         st.write('blah blah blah')
+
+if __name__ == '__main__':
+    main()
 # This app retrieves the list of the **S&P 500** (from Wikipedia) and its corresponding **stock closing price** (year-to-date)!
 # * **Python libraries:** base64, pandas, streamlit, yfinance, numpy, matplotlib
 # * **Data source:** [Wikipedia](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies).
