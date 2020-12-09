@@ -84,7 +84,9 @@ def main():
         df_pre_inplace = pd.read_csv('df_inplace_pre.csv',index_col=0)
         df_post_move = pd.read_csv('df_post_move.csv')
         df_pre_move = pd.read_csv('df_pre_move.csv')
+        final_table = pd.read_excel('final_table.xlsx',index_col = 0)
         #####
+        st.write('In short the overall mean for slots overall increased from 190 to 290 when dividing by days on floor.  The moved slots increased from 312 to 510 and the slot machines that stayed stationary increased from 76 to 83.', final_table.T)
         st.write('There were a total of 34 slot machines starting in zone 2. 32 slot machines were then moved from other zones to zone 2. Slot machines that moved are indicated by "moving" and those that stayed in place are indicated by "inplace" under the slot logistics column.')
         st.write('This is the pre_move table for the 32 slot machines and zone 2', df_pre)
         st.write('This is the post_move table for the 32 slot machines that moved into zone 2', df_post)
