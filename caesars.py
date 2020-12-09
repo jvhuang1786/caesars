@@ -7,6 +7,7 @@ import plotly.express as px
 from PIL import Image
 from datetime import datetime
 
+st.set_page_config(layout="wide")
 
 image = Image.open('images/logo.png')
 st.image(image, width = 800)
@@ -48,9 +49,36 @@ def main():
         #mask = (df_tables['date'] <= start_date) & (df_tables['date'] >= end_date)
         st.write('Table count for date and Summary Statistics of Actual Win, Drop and Actual divided by Minutes Played',df_tables)
 
+        st.write('Open Table Count through the months of October to November')
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=df_tables.date, y=df_tables['table count'],
+                            mode='lines',
+                            line_color = 'light blue',
+                            name='Number of Open Tables'))
+        st.plotly_chart(fig, use_container_width=True)
 
+        st.write('Open Table Count with Mean Statistics')
 
-        st.write('blah blah blah')
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=df_tables.date, y=df_tables['table count'],
+                            mode='lines',
+                            line_color = 'light blue',
+                            name='Number of Open Tables'))
+        fig.add_trace(go.Scatter(x=df_tables.date, y=df_tables['actual win mean'],
+                            mode='lines',
+                            line_color = 'teal',
+                            name='Mean Actual Win'))
+        fig.add_trace(go.Scatter(x=df_tables.date, y=df_tables['Drop mean'],
+                            mode='lines',
+                            line_color = 'blue',
+                            name='Mean Drop'))
+        fig.add_trace(go.Scatter(x=df_tables.date, y=df_tables['win/min mean'],
+                            mode='lines',
+                            line_color = 'red',
+                            name='Mean actual win/ minutes played'))
+        fig.update_layout(title_text = 'Number of Open Tables', xaxis_rangeslider_visible = True)
+        st.plotly_chart(fig, use_container_width=True)
+
 
 #Question2
     if option == 'Slot Machines Question 2':
