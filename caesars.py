@@ -23,7 +23,21 @@ def main():
 
 #Question1
     if option == 'How Many Tables Question 1':
-        st.write('How many Open Tables')
+        st.title('How many Open Tables')
+        ##dataframes##
+        df1 = pd.read_json('df1.json')
+        table_count = pd.read_json('table_count.json')
+        st.write('The number of unique tables on property ABC is 140', df1.c_table_num.unique())
+
+        #Plotly table count
+
+        table_count1 = table_count.head(50)
+
+        fig = go.Figure([go.Bar(x = table_count1['table_number'], y = table_count1['Count'])])
+        fig.update_traces(marker_color = 'rgb(158,202, 225)', marker_line_color = 'rgb(8,48,107)',
+                         marker_line_width = 1.5, opacity = 0.6)
+        fig.update_layout(title_text = 'Table Number and Count', width = 700, height = 1300)
+        st.plotly_chart(fig, use_container_width=True)
 
         st.write('blah blah blah')
 
