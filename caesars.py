@@ -4,6 +4,7 @@ import base64
 import matplotlib.pyplot as plt
 import numpy as np
 import yfinance as yf
+from PIL import Image
 
 image = Image.open('images/logo.png')
 st.image(image, width = 800)
