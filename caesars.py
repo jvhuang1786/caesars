@@ -89,20 +89,18 @@ def main():
 
         fig = go.Figure()
         fig.add_trace(go.Bar(
-            x=df_pre_inplace['c_serial_num'],
-            y=df_pre_inplace[['mtr_win over dof']],
-            name='Pre Move',
+            x=['Pre'],
+            y=df_pre_inplace.agg('mtr_win over dof').mean(),
             marker_color='silver'
         ))
         fig.add_trace(go.Bar(
-            x=df_post_inplace['c_serial_num'],
-            y=df_post_inplace[['mtr_win over dof']],
-            name='Post Move',
+            x=['Post'],
+            y=df_post_inplace.agg('mtr_win over dof').mean(),
             marker_color='gold'
         ))
 
         # Here we modify the tickangle of the xaxis, resulting in rotated labels.
-        fig.update_layout(title_text = 'Zone 2 Performance Post and Pre',barmode='group', xaxis_tickangle=-45)
+        fig.update_layout(title_text = 'Zone 2 Performance Post and Pre MTR over DOF Mean',barmode='group', xaxis_tickangle=-45)
         st.plotly_chart(fig, use_container_width=True)
 
         option = st.selectbox(
