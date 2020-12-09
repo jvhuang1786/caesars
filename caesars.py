@@ -92,24 +92,24 @@ def main():
  'B170506133','B170506134','MRXU005523','MRXU005524','MRXU005525','MRXU005526','MRXU005527','MRXU005528'))
         st.write('You selected:', option)
 
-        print(df_post[option].agg('mtr_win over dof').mean())
-        print(df_pre[option].agg('mtr_win over dof').mean())
-
-        print()
-        print()
-
-        print(df_post[option].agg('coin_in over dof').mean())
-        print(df_pre[option].agg('coin_in over dof').mean())
-
-        print()
-        print()
-
-        print(df_post[option].agg('mtr_win over hp').mean())
-        print(df_pre[option].agg('mtr_win over hp').mean())
-        print()
-        print()
-        print(df_post[option].agg('coin_in over hp').mean())
-        print(df_pre[option].agg('coin_in over hp').mean())
+        print(df_post[df_post['c_serial_num']==option])
+        # print(df_pre[option].agg('mtr_win over dof').mean())
+        #
+        # print()
+        # print()
+        #
+        # print(df_post[option].agg('coin_in over dof').mean())
+        # print(df_pre[option].agg('coin_in over dof').mean())
+        #
+        # print()
+        # print()
+        #
+        # print(df_post[option].agg('mtr_win over hp').mean())
+        # print(df_pre[option].agg('mtr_win over hp').mean())
+        # print()
+        # print()
+        # print(df_post[option].agg('coin_in over hp').mean())
+        # print(df_pre[option].agg('coin_in over hp').mean())
 
 if __name__ == '__main__':
     main()
