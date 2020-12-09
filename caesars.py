@@ -82,6 +82,8 @@ def main():
         df_post = pd.read_csv('df_post.csv',index_col = 0)
         df_post_inplace = pd.read_csv('df_inplace_post.csv',index_col =0)
         df_pre_inplace = pd.read_csv('df_inplace_pre.csv',index_col=0)
+        df_post_move = pd.read_csv('df_post_move.csv')
+        df_pre_move = pd.read_csv('df_pre_move.csv')
         #####
         st.write('There were a total of 34 slot machines starting in zone 2. 32 slot machines were then moved from other zones to zone 2. Slot machines that moved are indicated by "moving" and those that stayed in place are indicated by "inplace" under the slot logistics column.')
         st.write('This is the pre_move table for the 32 slot machines and zone 2', df_pre)
@@ -109,6 +111,24 @@ def main():
         fig = go.Figure()
         fig.add_trace(go.Bar(
             x=['Pre'],
+            y=pd.Series(round(df_post_move.agg('mtr_win over dof').mean(),3)),
+            name='Pre Move',
+            marker_color='blue'
+        ))
+        fig.add_trace(go.Bar(
+            x=['Post'],
+            y=pd.Series(round(df_post_move.agg('mtr_win over dof').mean(),3)),
+            name='Post Move',
+            marker_color='gold'
+        ))
+
+        # Here we modify the tickangle of the xaxis, resulting in rotated labels.
+        fig.update_layout(title_text = 'Post and Pre MTR over DOF Mean moved slots',barmode='group', xaxis_tickangle=-45)
+        st.plotly_chart(fig, use_container_width=True)
+
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
+            x=['Pre'],
             y=pd.Series(round(df_pre_inplace.agg('mtr_win over dof').mean(),3)),
             name='Pre Move',
             marker_color='silver'
@@ -121,7 +141,7 @@ def main():
         ))
 
         # Here we modify the tickangle of the xaxis, resulting in rotated labels.
-        fig.update_layout(title_text = 'Zone 2 Performance Post and Pre MTR over DOF Mean',barmode='group', xaxis_tickangle=-45)
+        fig.update_layout(title_text = 'Zone 2 Performance Post and Pre MTR over DOF Mean without moved slots',barmode='group', xaxis_tickangle=-45)
         st.plotly_chart(fig, use_container_width=True)
 
         option = st.selectbox(
