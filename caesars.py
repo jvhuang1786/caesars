@@ -91,25 +91,25 @@ def main():
  '5141618','B160874785','B160874786','B160874788','B160874789','B170506131','B170506132',
  'B170506133','B170506134','MRXU005523','MRXU005524','MRXU005525','MRXU005526','MRXU005527','MRXU005528'))
         st.write('You selected:', option)
-        df_comb = pd.concat([df_post[df_post['c_serial_num']==option],df_pre[df_pre['c_serial_num']==option]])
+        df_comb = pd.concat([df_post[df_post['c_serial_num']==option],df_pre[df_pre['c_serial_num']==option]]).reset_index()
         st.write(df_comb.T)
-        # print(df_pre[option].agg('mtr_win over dof').mean())
-        #
-        # print()
-        # print()
-        #
-        # print(df_post[option].agg('coin_in over dof').mean())
-        # print(df_pre[option].agg('coin_in over dof').mean())
-        #
-        # print()
-        # print()
-        #
-        # print(df_post[option].agg('mtr_win over hp').mean())
-        # print(df_pre[option].agg('mtr_win over hp').mean())
-        # print()
-        # print()
-        # print(df_post[option].agg('coin_in over hp').mean())
-        # print(df_pre[option].agg('coin_in over hp').mean())
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
+            x=,
+            y=df_comb[['mtr_win over dof', 'coin_in over dof',
+       'mtr_win over hp', 'coin_in over hp']][0],
+            name='Primary Product',
+            marker_color='indianred'))
+        # ))
+        # fig.add_trace(go.Bar(
+        #     x=months,
+        #     y=[19, 14, 22, 14, 16, 19, 15, 14, 10, 12, 12, 16],
+        #     name='Secondary Product',
+        #     marker_color='lightsalmon'
+        # ))
+
+        # Here we modify the tickangle of the xaxis, resulting in rotated labels.
+        fig.update_layout(barmode='group', xaxis_tickangle=-45)
 
 if __name__ == '__main__':
     main()
