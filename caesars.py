@@ -27,17 +27,22 @@ def main():
         ##dataframes##
         df1 = pd.read_json('df1.json')
         table_count = pd.read_json('table_count.json')
-        st.write('The number of unique tables on property ABC is 140', len(df1.c_table_num.unique()))
+        df_tables = pd.read_json('df_tables.json')
+        #####
+        start_date = st.sidebar.date_input('Start date', df_tables['d_game_date'][0])
+        end_date = st.sidebar.date_input('End date', df_tables['df_game_date'][51])
+
+        if start_date < end_date:
+            st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
+        else:
+            st.error('Error: End date must fall after start date.')
+
+        st.write('The number of unique tables on property ABC is: ', len(df1.c_table_num.unique()))
 
         #Plotly table count
 
-        st.write(table_count)
+        st.write('This is the table number and their counts through the given dates.', table_count)
 
-        # fig = go.Figure([go.Bar(x = table_count1['table number'], y = table_count1['count'])])
-        # fig.update_traces(marker_color = 'rgb(158,202, 225)', marker_line_color = 'rgb(8,48,107)',
-        #                  marker_line_width = 1.5, opacity = 0.6)
-        # fig.update_layout(title_text = 'Table Number and Count', width = 700, height = 1300)
-        # st.plotly_chart(fig, use_container_width=True)
 
         st.write('blah blah blah')
 
