@@ -67,13 +67,16 @@ def main():
 
         fig = px.box(df1, x="d_game_date", y="Drop",  title = 'Box Whiskers Drop')
         fig.update_traces(quartilemethod="exclusive") # or "inclusive", or "linear" by default
-        fig.update_layout(title_text = 'Drop amount', xaxis_rangeslider_visible = True)
+        fig.update_layout(title_text = 'Drop amount Box and Whiskers', xaxis_rangeslider_visible = True)
         st.plotly_chart(fig, use_container_width=True)
 
         fig = px.box(df1, x="d_game_date", y="f_actual_win",  title = 'Box Whiskers actual win')
         fig.update_traces(quartilemethod="exclusive") # or "inclusive", or "linear" by default
-        fig.update_layout(title_text = 'Actual Win', xaxis_rangeslider_visible = True)
+        fig.update_layout(title_text = 'Actual Win Box and Whiskers', xaxis_rangeslider_visible = True)
         st.plotly_chart(fig, use_container_width=True)
+
+        st.write('What was interesting is there was decrease in table amount just on November 21st. Usuaully there are around 100 tables on the weekends and 70ish tables on the weekdays.  However, this number has been decreasing. But the amount of money actually increased on the last day.')
+
 #Question2
     if option == 'Slot Machines Question 2':
         st.title('Slot Machine Reallocation')
