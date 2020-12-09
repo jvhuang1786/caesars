@@ -31,7 +31,7 @@ def main():
 
         #Plotly table count
 
-        table_count1 = table_count.head(50)
+        table_count1 = table_count.head(30)
 
         fig = go.Figure([go.Bar(x = table_count1['table number'], y = table_count1['count'])])
         fig.update_traces(marker_color = 'rgb(158,202, 225)', marker_line_color = 'rgb(8,48,107)',
