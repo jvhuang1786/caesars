@@ -81,7 +81,7 @@ def main():
         df_pre = pd.read_csv('df_pre.csv',index_col = 0)
         df_post = pd.read_csv('df_post.csv',index_col = 0)
         #####
-        st.write('There were a total of 34 slot machines starting in zone 2. 32 slot machines were then moved from other zones to zone 2.')
+        st.write('There were a total of 34 slot machines starting in zone 2. 32 slot machines were then moved from other zones to zone 2. Slot machines that moved are indicated by "moving" and those that stayed in place are indicated by "inplace" under the slot logistics column.')
         st.write('This is the pre_move table for the 32 slot machines and zone 2', df_pre)
         st.write('This is the post_move table for the 32 slot machines that moved into zone 2', df_post)
         option = st.selectbox(
