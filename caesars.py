@@ -1,39 +1,42 @@
 import streamlit as st
 import pandas as pd
 import base64
-import matplotlib.pyplot as plt
 import numpy as np
-import yfinance as yf
+import plotly.graph_objects as go
+import plotly.express as px
 from PIL import Image
 
 image = Image.open('images/logo.png')
 st.image(image, width = 800)
 
-st.title('Caesars App')
+caesars_titletemp = """
+<div style="background-color:#E31C3C;padding:1px">
+<h3 style="color:#313F3D;text-align:center;">Caesars Entertainment Dashboard</h3>
+</div>
+"""
+st.markdown(caesars_titlletemp,unsafe_allow_html=True)
 
 def main():
     activities = ['How Many Tables Question 1', 'Slot Machines Question 2']
     option = st.sidebar.selectbox('Selection Option:', activities)
 
 
-#Intro
-    if option == 'How Many Tables Question 1':
-        st.title("Crossref API Intro")
+#Question1
+    if option == 'How Many Tables Question 1'
         caesars_temp = """
         <div style="background-color:#E31C3C;padding:1px">
-        <h3 style="color:#313F3D;text-align:center;">Crossref API</h3>
+        <h3 style="color:#313F3D;text-align:center;">How Many Tables</h3>
         </div>
         """
         st.markdown(caesars_temp,unsafe_allow_html=True)
 
         st.write('blah blah blah')
 
-#Intro
+#Question2
     if option == 'Slot Machines Question 2':
-        st.title("Crossref API Intro")
         caesars_temp = """
         <div style="background-color:#E31C3C;padding:1px">
-        <h3 style="color:#313F3D;text-align:center;">Crossref API</h3>
+        <h3 style="color:#313F3D;text-align:center;">Slot Machine Reallocation</h3>
         </div>
         """
         st.markdown(caesars_temp,unsafe_allow_html=True)
