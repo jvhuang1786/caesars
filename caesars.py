@@ -107,6 +107,24 @@ def main():
         fig.update_layout(title_text = 'Overall Post and Pre MTR over DOF Mean',barmode='group', xaxis_tickangle=-45)
         st.plotly_chart(fig, use_container_width=True)
 
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
+            x=['Pre'],
+            y=pd.Series(round(df_pre.agg('mtr_win over dof').sum(),3)),
+            name='Pre Move',
+            marker_color='red'
+        ))
+        fig.add_trace(go.Bar(
+            x=['Post'],
+            y=pd.Series(round(df_post.agg('mtr_win over dof').sum(),3)),
+            name='Post Move',
+            marker_color='gold'
+        ))
+
+        # Here we modify the tickangle of the xaxis, resulting in rotated labels.
+        fig.update_layout(title_text = 'Overall Post and Pre MTR over dof Sum',barmode='group', xaxis_tickangle=-45)
+        st.plotly_chart(fig, use_container_width=True)
+
 
         fig = go.Figure()
         fig.add_trace(go.Bar(
