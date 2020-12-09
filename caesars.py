@@ -90,12 +90,12 @@ def main():
         fig = go.Figure()
         fig.add_trace(go.Bar(
             x=['Pre'],
-            y=df_pre_inplace.agg('mtr_win over dof').mean(),
+            y=round(df_pre_inplace.agg('mtr_win over dof').mean(),3),
             marker_color='silver'
         ))
         fig.add_trace(go.Bar(
             x=['Post'],
-            y=df_post_inplace.agg('mtr_win over dof').mean(),
+            y=round(df_post_inplace.agg('mtr_win over dof').mean(),3),
             marker_color='gold'
         ))
 
