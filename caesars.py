@@ -29,7 +29,7 @@ def main():
         ##dataframes##
         df1 = pd.read_json('df1.json')
         table_count = pd.read_json('table_count.json')
-        df_tables = pd.read_csv('df_tables.csv')
+        df_tables = pd.read_csv('df_tables.csv',index_col =0)
         # df_tables = df1.groupby('d_game_date').agg({'c_table_num': ['count'],'f_actual_win': ['sum', 'min', 'max', 'mean', 'median', 'std'],
         #                         'Drop': ['sum', 'min', 'max', 'mean', 'median', 'std'],
         #                                  'actul win over minutes played': ['sum', 'min', 'max', 'mean', 'median', 'std']})
