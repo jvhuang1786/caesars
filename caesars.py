@@ -106,7 +106,7 @@ def main():
             x=['mtr_win over dof', 'coin_in over dof',
        'mtr_win over hp', 'coin_in over hp'],
             y=df_comb[['mtr_win over dof', 'coin_in over dof',
-       'mtr_win over hp', 'coin_in over hp']].iloc[0],
+       'mtr_win over hp', 'coin_in over hp']].iloc[1],
             name='Pre Move',
             marker_color='lightsalmon'
         ))
