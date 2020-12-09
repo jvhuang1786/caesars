@@ -44,9 +44,9 @@ def main():
 
 
         st.write('This is the table number and their counts through the given dates.', table_count)
-
+        st.write(df_tables)
         mask = (df_tables['d_game_date'] >= start_date) & (df_tables['d_game_date'] <= end_date)
-        st.write(df_tables.loc[mask])
+
 
         st.write('blah blah blah')
 
