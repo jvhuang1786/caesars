@@ -33,7 +33,7 @@ def main():
 
         table_count1 = table_count.head(50)
 
-        fig = go.Figure([go.Bar(x = table_count1['table number'], y = table_count1['Count'])])
+        fig = go.Figure([go.Bar(x = table_count1['table number'], y = table_count1['count'])])
         fig.update_traces(marker_color = 'rgb(158,202, 225)', marker_line_color = 'rgb(8,48,107)',
                          marker_line_width = 1.5, opacity = 0.6)
         fig.update_layout(title_text = 'Table Number and Count', width = 700, height = 1300)
