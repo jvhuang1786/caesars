@@ -28,18 +28,9 @@ def main():
     if option == 'How Many Tables Question 1':
         st.title('How many Open Tables')
         ##dataframes##
-        df1 = pd.read_json('df1.json')
+        df1 = pd.read_csv('df1.csv')
         table_count = pd.read_json('table_count.json')
         df_tables = pd.read_csv('df_tables.csv',index_col =0)
-        #df_tables.date = df_tables.date.apply(lambda x: datetime.strptime(x, '%Y-%m-%d'))
-        #####
-        # start_date = st.sidebar.date_input('Start date', datetime.strptime('2020-09-30', '%Y-%m-%d'))
-        # end_date = st.sidebar.date_input('End date', datetime.strptime('2020-11-22', '%Y-%m-%d'))
-        #
-        # if start_date < end_date:
-        #     st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
-        # else:
-        #     st.error('Error: End date must fall after start date.')
 
         st.write('The number of unique tables on property ABC is: ', len(df1.c_table_num.unique()))
 
