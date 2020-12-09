@@ -14,7 +14,7 @@ caesars_titletemp = """
 <h3 style="color:#313F3D;text-align:center;">Caesars Entertainment Dashboard</h3>
 </div>
 """
-st.markdown(caesars_titlletemp,unsafe_allow_html=True)
+st.markdown(caesars_titletemp,unsafe_allow_html=True)
 
 def main():
     activities = ['How Many Tables Question 1', 'Slot Machines Question 2']
