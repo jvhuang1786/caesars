@@ -95,7 +95,7 @@ def main():
        '2174341', '2174128', '2174372', '1965309', '2174393', '1948962',
        '2174358', '2174167', '2174120', '2174126', '2174124', '2174130',
        '2174353', '2174332', '2174387', '2174129'],
-            y=df_pre_inplace[['mtr_win over dof', 'coin_in over dof']],
+            y=df_pre_inplace[['mtr_win over dof']],
             name='Pre Move',
             marker_color='silver'
         ))
@@ -106,7 +106,7 @@ def main():
        '2174341', '2174128', '2174372', '1965309', '2174393', '1948962',
        '2174358', '2174167', '2174120', '2174126', '2174124', '2174130',
        '2174353', '2174332', '2174387', '2174129'],
-            y=df_post_inplace[['mtr_win over dof', 'coin_in over dof']],
+            y=df_post_inplace[['mtr_win over dof']],
             name='Post Move',
             marker_color='gold'
         ))
