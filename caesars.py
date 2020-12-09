@@ -32,8 +32,8 @@ def main():
         df_tables = pd.read_csv('df_tables.csv',index_col =0)
         df_tables.date = df_tables.date.apply(lambda x: datetime.strptime(x, '%Y-%m-%d'))
         #####
-        start_date = st.sidebar.date_input('Start date', datetime.strptime('2020-10-01', '%Y-%m-%d'))
-        end_date = st.sidebar.date_input('End date', datetime.strptime('2020-11-21', '%Y-%m-%d'))
+        start_date = st.sidebar.date_input('Start date', datetime.strptime('2020-09-30', '%Y-%m-%d'))
+        end_date = st.sidebar.date_input('End date', datetime.strptime('2020-11-22', '%Y-%m-%d'))
 
         if start_date < end_date:
             st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
