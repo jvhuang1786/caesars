@@ -85,8 +85,18 @@ def main():
         df_post_move = pd.read_csv('df_post_move.csv')
         df_pre_move = pd.read_csv('df_pre_move.csv')
         final_table = pd.read_excel('final_table.xlsx',index_col = 0)
+        df_combo = pd.read_csv('df_combo.csv',index_col = 0)
         #####
         st.write('In short the overall mean for slots overall increased from 190 to 290 when dividing by days on floor.  The moved slots increased from 312 to 510 and the slot machines that stayed stationary increased from 76 to 83.', final_table.T)
+
+        option1 = st.selectbox(
+        'Which of the 32 slot Machines do you want to compare?',('box','violin','rug'))
+        st.write('You selected:', option1)
+        fig = px.histogram(df_combo, x='mtr_win over dof', color="Time_Period", marginal=option1, # can be `box`, `violin`
+                         hover_data=df_combo.columns)
+        fig.update_layout(title_text = 'MTR_Win Distribution Post and Pre')
+
+        st.plotly_chart(fig, use_container_width=True)
         st.write('There were a total of 34 slot machines starting in zone 2. 32 slot machines were then moved from other zones to zone 2. Slot machines that moved are indicated by "moving" and those that stayed in place are indicated by "inplace" under the slot logistics column.')
         st.write('This is the pre_move table for the 32 slot machines and zone 2', df_pre)
         st.write('This is the post_move table for the 32 slot machines that moved into zone 2', df_post)
