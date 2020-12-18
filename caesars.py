@@ -84,7 +84,7 @@ def main():
         df_pre_inplace = pd.read_csv('df_inplace_pre.csv',index_col=0)
         df_post_move = pd.read_csv('df_post_move.csv')
         df_pre_move = pd.read_csv('df_pre_move.csv')
-        final_table = pd.read_excel('final_table.xlsx',index_col = 0)
+        final_table = pd.read_csv('final_table.csv',index_col = 0)
         df_combo = pd.read_csv('df_combo.csv',index_col = 0)
         #####
         st.write('In short the overall mean for slots overall increased from 190 to 290 when dividing by days on floor.  The moved slots increased from 312 to 510 and the slot machines that stayed stationary increased from 76 to 83.', final_table.T)
